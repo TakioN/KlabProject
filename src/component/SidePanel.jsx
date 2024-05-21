@@ -12,9 +12,10 @@ function SidePanel() {
 
     const navigate = useNavigate();
 
-    const goToHome = () => { navigate('/') }
+    const gotoHome = () => { navigate('/') }
     const gotoProfile = () => { navigate('/profile') }
     const gotoWritingDiary = () => { navigate('/makediary') }
+    const gotoSearch = () => { navigate('/search') }
 
     return (
         <div
@@ -35,7 +36,7 @@ function SidePanel() {
                     cursor: 'pointer',
                     marginBottom: '50px',
                 }}
-                onClick={ () => {goToHome()} }
+                onClick={ () => {gotoHome()} }
             >
                 Memory Capsule
             </span>
@@ -47,8 +48,8 @@ function SidePanel() {
                 flexDirection: 'column',
                 justifyContent: 'space-between'
             }}>
-                <li className = 'sideList'><IoSearch />Search</li>
-                <li className = 'sideList' onClick={() => {goToHome()}}><GoHomeFill />Home</li>
+                <li className = 'sideList' onClick={() => {gotoSearch()}}><IoSearch />Search</li>
+                <li className = 'sideList' onClick={() => {gotoHome()}}><GoHomeFill />Home</li>
                 <li className = 'sideList' onClick={() => {gotoWritingDiary()}}><RiBookReadFill/>Make Diary</li>
                 <li className = 'sideList'><IoIosNotifications />Notification</li>
                 <li className = 'sideList' onClick = {() => {gotoProfile()}}><CgProfile />Profile</li>

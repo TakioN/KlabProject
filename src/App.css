@@ -91,10 +91,17 @@ p {
 #background_select {
   margin-top: 50px;
 }
-.background_paper {
-  border: 1px solid gray;
-}
 .background_paper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.search_grid {
+  border: 1px solid rgb(205, 201, 201);
+  cursor: pointer;
+}
+.search_grid img{
   width: 100%;
   height: 100%;
   object-fit: cover;
