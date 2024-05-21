@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.009f30a3.css",
+    "main.js": "/static/js/main.aa68b038.js",
+    "static/js/453.2ef5181b.chunk.js": "/static/js/453.2ef5181b.chunk.js",
+    "static/media/diary4.png": "/static/media/diary4.afcff3a951e43de58936.png",
+    "static/media/back2.png": "/static/media/back2.ac9cc5ee21042ab4c632.png",
+    "static/media/diary.png": "/static/media/diary.0ab9fca3c8c80858704e.png",
+    "static/media/back4.png": "/static/media/back4.e6e4c3ae738acbc9e302.png",
+    "static/media/back5.png": "/static/media/back5.d62d964a157a5c11bbc4.png",
+    "static/media/diary3.png": "/static/media/diary3.6b73038da56b40166665.png",
+    "static/media/diary2.png": "/static/media/diary2.47d914e654ce3d3cbbef.png",
+    "static/media/back3.png": "/static/media/back3.2349c068f5c60cc0bc98.png",
+    "static/media/back6.png": "/static/media/back6.9a587f1afb51bddc36d7.png",
+    "static/media/VeganStylePersonalUse.ttf": "/static/media/VeganStylePersonalUse.0aec18fe70f7524809cf.ttf",
+    "static/media/PoetsenOne-Regular.ttf": "/static/media/PoetsenOne-Regular.22ae511e03fc2ed8d264.ttf",
+    "static/media/back1.png": "/static/media/back1.26b48cfbd4a4f05c2c1d.png",
+    "index.html": "/index.html",
+    "main.009f30a3.css.map": "/static/css/main.009f30a3.css.map",
+    "main.aa68b038.js.map": "/static/js/main.aa68b038.js.map",
+    "453.2ef5181b.chunk.js.map": "/static/js/453.2ef5181b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.009f30a3.css",
+    "static/js/main.aa68b038.js"
+  ]
+}
