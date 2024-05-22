@@ -4,7 +4,6 @@ function RecentUploader() {
     return (
         <div
             style={{
-                // background: 'purple',
                 height: '15vh',
                 display: 'flex',
 
@@ -23,7 +22,6 @@ function RecentUploader() {
                         backgroundOrigin: 'border-box',
                         backgroundClip: 'border-box',
                         borderRadius: '50%',
-                        // margin: '0 auto',
                         display: 'flex',
                         justifyContent: 'center',
                         padding: '2px 3px',

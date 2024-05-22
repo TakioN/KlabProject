@@ -3,6 +3,9 @@ import SidePanel from "./SidePanel";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 import diary1 from '../img/diary.png';
 import diary2 from '../img/diary2.png';
@@ -11,11 +14,23 @@ import diary4 from '../img/diary4.png';
 import diary5 from '../img/diary.png';
 import diary6 from '../img/diary2.png';
 
-function Search(){
-    return(
+function Search() {
+    return (
         <div>
             <SidePanel />
-            <div className='mainscreen' style={{marginRight: '200px'}}>
+            <div className='mainscreen' style={{ marginRight: '200px' }}>
+                <div>
+                    <InputGroup className="mb-3">
+                        <Form.Control
+                            placeholder="Search User"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                        />
+                        <Button variant="outline-secondary" id="button-addon2">
+                            Search
+                        </Button>
+                    </InputGroup>
+                </div>
                 <Container>
                     <Row>
                         <Col className='search_grid'><img src={diary1} alt="" /></Col>

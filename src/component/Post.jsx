@@ -4,13 +4,20 @@ import diary from '../img/diary.png';
 import { PiBookmarkSimple } from "react-icons/pi";
 import { FcBookmark } from "react-icons/fc";
 import { CgComment } from "react-icons/cg";
+import PostModal from './PostModal';
 
 function Post() {
     const [isLike, setIsLike] = useState(false);
+    const [show, setShow] = useState(false);
 
-    // const likeHandler = () => {
+    const showPostModal = () => {
+        setShow(true);
+    }
 
-    // }
+    const closeModal = () => {
+        setShow(false);
+        document.body.style = 'overflow: unset';
+    }
 
     return(
         <div
@@ -73,7 +80,7 @@ function Post() {
                     <PiBookmarkSimple size='30' style={{marginRight: '10px', verticalAlign: 'middle'}} onClick={() => {setIsLike(!isLike)}}/>
                 }
                 <span style={{marginRight: '50px', height: '30px', display: 'inline-block'}}>0</span>
-                <CgComment size='28' style={{verticalAlign: 'middle'}} />
+                <CgComment size='28' style={{verticalAlign: 'middle'}} onClick={() => showPostModal()} />
 
             </div>
             <div 
@@ -88,6 +95,8 @@ function Post() {
                 seeLong time no seeLong time no seeLong time no seeLong time no seeLong time no seeLong 
                 ime no seeLong time no seeLong time no seeLong time no seeLong time no see
             </div>
+
+            {show && <PostModal onClose={() => closeModal()} />}
         </div>        
     )
 }
