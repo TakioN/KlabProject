@@ -21,7 +21,7 @@ function App() {
     //   <SidePanel />
     //   <MainPanel />
     // </div>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* <Route path='/login' render={() => (isLogin ? <Redirect to='/' /> : <Login />)} /> */}
         <Route path='/search' element={<Search />} />
