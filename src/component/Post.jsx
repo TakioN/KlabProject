@@ -1,9 +1,17 @@
+import { useState } from 'react';
+
 import diary from '../img/diary.png';
 import { PiBookmarkSimple } from "react-icons/pi";
-// import { FcBookmark } from "react-icons/fc";
+import { FcBookmark } from "react-icons/fc";
 import { CgComment } from "react-icons/cg";
 
 function Post() {
+    const [isLike, setIsLike] = useState(false);
+
+    // const likeHandler = () => {
+
+    // }
+
     return(
         <div
             style={{
@@ -58,8 +66,12 @@ function Post() {
                     paddingTop: '15px',
                     marginBottom: '10px'
                 }}
-            >
-                <PiBookmarkSimple size='30' style={{marginRight: '10px', verticalAlign: 'middle'}}/>
+            >   
+                {isLike ?
+                    <FcBookmark size='30' style={{marginRight: '10px', verticalAlign: 'middle'}} onClick={() => {setIsLike(!isLike)}}/>
+                    :
+                    <PiBookmarkSimple size='30' style={{marginRight: '10px', verticalAlign: 'middle'}} onClick={() => {setIsLike(!isLike)}}/>
+                }
                 <span style={{marginRight: '50px', height: '30px', display: 'inline-block'}}>0</span>
                 <CgComment size='28' style={{verticalAlign: 'middle'}} />
 
