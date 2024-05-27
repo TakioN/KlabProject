@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import SidePanel from "./SidePanel";
 
@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { FaDeleteLeft } from "react-icons/fa6";
 
 import back1 from '../img/back1.png';
 import back2 from '../img/back2.png';
@@ -17,9 +18,44 @@ import back6 from '../img/back6.png';
 function WritingDiary() {
 
     const [activeBackId, setActiveBackId] = useState("");
+    const [selectedKey, setSelectedKey] = useState([]);
+    const inputTag = useRef();
 
     const backgroundHandler = (e) => {
         setActiveBackId(e.target.id);
+    }
+    const keyInput = (e) => {
+        if (e.key === 'Enter') {
+            let input = inputTag.current.value.trim();
+            if (input !== '') {
+                setSelectedKey([...selectedKey, input]);
+                inputTag.current.value = "";
+            }
+            console.log(selectedKey);
+        }
+    }
+    const showSelectedKey = (arr) => {
+        return arr.map((key, idx) => (
+            <span
+                key={idx}
+                style={{
+                    display: 'inline-block',
+                    padding: '5px',
+                    border: '#0093ED 2px solid',
+                    borderRadius: '7px',
+                }}
+            >
+                {key}
+                <FaDeleteLeft style={{marginLeft: '5px'}} onClick={() => {deleteKey(idx)}} />
+            </span>
+        ))
+    }
+
+    const deleteKey = (idx) => {
+        setSelectedKey(selectedKey.filter((_, i) =>
+            i !== idx
+        ));
+        console.log(selectedKey);
     }
 
     return (
@@ -35,13 +71,24 @@ function WritingDiary() {
                     }}>
                         How Was Your Day?
                     </p>
+                    <p style={{
+                        fontFamily: 'poetsenone',
+                        marginBottom: '10px'
+                    }}>
+                        Press Enter Key After Each Keyword
+                    </p>
                     <Form.Floating className="mb-3">
                         <Form.Control
                             id="floatingInputCustom"
-                            placeholder="key1"
+                            placeholder="key1sds"
+                            onKeyDown={keyInput}
+                            ref={inputTag}
                         />
                         <label htmlFor="floatingInputCustom" style={{ color: '#0093ED' }}>Keyword</label>
                     </Form.Floating>
+
+                    <div id='selectedKey'>{showSelectedKey(selectedKey)}</div>
+
                     <div id='background_select'>
                         <Container>
                             <Row>

@@ -167,6 +167,16 @@ p {
 #comment_input {
   margin-bottom: 0 !important;
 }
+#selectedKey {
+  width: 100%;
+  min-height: 40px;
+  border: #0093ED 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 /* component references */
 #button_case{
