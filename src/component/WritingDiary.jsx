@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 
 import API from './API';
 import SidePanel from "./SidePanel";
@@ -74,9 +75,9 @@ function WritingDiary() {
     const BACKGROUND_IMAGE_COL_NUM = 6;
 
     useEffect(() => {
-        if(loading) {
+        if (loading) {
             document.body.style = 'overflow: hidden';
-        }else {
+        } else {
             document.body.style = 'overflow: unset';
         }
     }, [loading])
@@ -154,6 +155,7 @@ function WritingDiary() {
     const writeDiary = async (a) => {
         let date = new Date().toLocaleDateString();
         let keywordString = "";
+        let params;
 
         for (let i = 0; i < selectedKey.length; i++) {
             if (i == 0) {
@@ -164,17 +166,20 @@ function WritingDiary() {
             }
 
         }
+
+        params = {
+            'username': 'Lee Jungbeen',
+            'userInput': keywordString,
+            'todayDate': date
+        }
+
         try {
             // await API.post("/dutch", {
-            await API.post("/gpt/diary/dutch", {
-                'userName': 'Lee Jungbeen',
-                'userInput': keywordString,
-                'todayDate': date
-            }).then(res => {
+            await axios.post("/gpt/diary/dutch", null, { params: params, withCredentials: true }).then(res => {
                 setLoading(false);
                 console.log(res);
-                setDiary(res.data.message.content);
-                setTempDiary(res.data.message.content);
+                setDiary(res.data);
+                setTempDiary(res.data);
                 setDiaryState(2);
             });
 
@@ -195,11 +200,17 @@ function WritingDiary() {
 
     const sendDiary = async () => {
         //error: put method 없음
+
         if (diary.length != 0) {
             try {
-                await API.post('/diaries', {
+                await axios.post('/diaries', {
                     'userId': 3812456,
                     'content': diary
+                }).then(() => {
+                    setLoading(true);
+                    setDiaryState(0);
+                    window.scrollTo({ top: 0 });
+                    setSelectedKey([]);
                 })
             } catch (error) {
                 console.error("There was an error in DiaryPost!", error)
@@ -300,10 +311,11 @@ function WritingDiary() {
                         </div>
                         <div className='button_case' style={{ width: '630px', marginTop: '20px', height: '60px' }}>
                             <span className="button_outer" onClick={() => {
+                                setLoading(true);
                                 sendDiary();
-                                setDiaryState(0);
-                                window.scrollTo({ top: 0 });
-                                setSelectedKey([]);
+                                // setDiaryState(0);
+                                // window.scrollTo({ top: 0 });
+                                // setSelectedKey([]);
                             }}>
                                 <span className="button_inner"></span>
                                 SAVE
@@ -313,15 +325,11 @@ function WritingDiary() {
                 }
                 {loading &&
                     <div id="modal-wrap">
-                        <Spinner animation="border" role="status" id = 'spinner'>
+                        <Spinner animation="border" role="status" id='spinner'>
                             <span className="visually-hidden">Loading...</span>
                         </Spinner>
                     </div>
                 }
-
-                <div>
-
-                </div>
             </div>
 
         </div>

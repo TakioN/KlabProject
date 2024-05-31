@@ -34,8 +34,8 @@ function App() {
 
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-    {/* <BrowserRouter> */}
+    // <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Routes>
         {/* <Route path='/login' render={() => (isLogin ? <Redirect to='/' /> : <Login />)} /> */}
         <Route path='/login' element={<Login />} />

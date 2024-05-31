@@ -182,6 +182,7 @@ p {
   width: 630px;
   height: 891px;
   padding: 25px;
+  white-space: pre-line;
 }
 #spinner {
   position: fixed;
