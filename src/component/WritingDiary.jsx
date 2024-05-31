@@ -8,64 +8,78 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
 import { FaDeleteLeft } from "react-icons/fa6";
 
 import back3 from '../img/back3.png';
+
+//Server base URL : htttp://52.78.72.107:8080
 
 function WritingDiary() {
 
     const [activeBackId, setActiveBackId] = useState("");
     const [selectedKey, setSelectedKey] = useState([]);
-    const [tempDiary, setTempDiary] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-        "Nunc ac nunc nec ligula commodo consequat quis id augue. Morbi nec sapien lectus." +
-        "Vestibulum sollicitudin ultricies molestie. Nunc vitae lectus eget erat consequat euismod." +
-        "In sit amet nibh fringilla diam vestibulum imperdiet. Etiam tristique nisl lacinia, tincidunt risus id," +
-        "pulvinar purus. Vestibulum feugiat vitae tortor eu vehicula. Proin nec nunc accumsan, pulvinar odio id," +
-        "sollicitudin lorem. Aliquam luctus ut est sed ornare. Fusce cursus nulla id sem egestas accumsan." +
-        "Nunc et ante accumsan, consequat ex non, semper mi. Vestibulum mattis porta faucibus. Cras finibus" +
-        "eros a tellus sodales consectetur. Mauris felis nibh, egestas et lorem in, tincidunt lobortis arcu." +
-        "In mauris nibh, imperdiet quis ex ut, molestie auctor sapien. Duis efficitur, nibh nec iaculis egestas," +
-        "lorem neque blandit nulla, maximus dignissim justo erat eget elit. Duis ullamcorper faucibus mollis." +
-        "Donec auctor quis dolor nec euismod. Morbi rhoncus eleifend lacus, sed semper nulla hendrerit ut." +
-        "Suspendisse pharetra faucibus sapien. Curabitur auctor dui sed gravida mollis. Etiam orci sapien," +
-        "finibus ac lorem convallis, finibus pharetra est. Nunc quis odio pellentesque, suscipit augue at," +
-        "pulvinar libero. Nam porta, orci a auctor egestas, nulla enim varius quam, eget ultrices est leo a dui." +
-        "Etiam egestas finibus mattis. Aenean nunc est, fringilla sed risus at, pulvinar lobortis nisl." +
-        "Maecenas commodo fringilla placerat. Maecenas quis laoreet eros. Praesent metus tellus, ultrices et dolor" +
-        "quis, tristique mattis justo. Maecenas blandit, dolor eget dignissim fermentum, purus risus pulvinar nisl," +
-        "et dignissim ligula lacus vel neque. Ut interdum purus sed pharetra viverra. Suspendisse venenatis eget" +
-        "odio sit amet convallis. Integer facilisis imperdiet purus, non dapibus metus tincidunt ut. Sed a lobortis" +
-        "sem. Fusce et sem ipsum. Donec in nibh at mi convallis luctus a et ex. Donec aliquet accumsan nulla." +
-        "Vivamus eget odio eu nulla efficitur pretium sit amet vitae lectus. Ut dapibus lectus libero," +
-        "et cursus metus cursus interdum.");
-    const [diary, setDiary] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-        "Nunc ac nunc nec ligula commodo consequat quis id augue. Morbi nec sapien lectus." +
-        "Vestibulum sollicitudin ultricies molestie. Nunc vitae lectus eget erat consequat euismod." +
-        "In sit amet nibh fringilla diam vestibulum imperdiet. Etiam tristique nisl lacinia, tincidunt risus id," +
-        "pulvinar purus. Vestibulum feugiat vitae tortor eu vehicula. Proin nec nunc accumsan, pulvinar odio id," +
-        "sollicitudin lorem. Aliquam luctus ut est sed ornare. Fusce cursus nulla id sem egestas accumsan." +
-        "Nunc et ante accumsan, consequat ex non, semper mi. Vestibulum mattis porta faucibus. Cras finibus" +
-        "eros a tellus sodales consectetur. Mauris felis nibh, egestas et lorem in, tincidunt lobortis arcu." +
-        "In mauris nibh, imperdiet quis ex ut, molestie auctor sapien. Duis efficitur, nibh nec iaculis egestas," +
-        "lorem neque blandit nulla, maximus dignissim justo erat eget elit. Duis ullamcorper faucibus mollis." +
-        "Donec auctor quis dolor nec euismod. Morbi rhoncus eleifend lacus, sed semper nulla hendrerit ut." +
-        "Suspendisse pharetra faucibus sapien. Curabitur auctor dui sed gravida mollis. Etiam orci sapien," +
-        "finibus ac lorem convallis, finibus pharetra est. Nunc quis odio pellentesque, suscipit augue at," +
-        "pulvinar libero. Nam porta, orci a auctor egestas, nulla enim varius quam, eget ultrices est leo a dui." +
-        "Etiam egestas finibus mattis. Aenean nunc est, fringilla sed risus at, pulvinar lobortis nisl." +
-        "Maecenas commodo fringilla placerat. Maecenas quis laoreet eros. Praesent metus tellus, ultrices et dolor" +
-        "quis, tristique mattis justo. Maecenas blandit, dolor eget dignissim fermentum, purus risus pulvinar nisl," +
-        "et dignissim ligula lacus vel neque. Ut interdum purus sed pharetra viverra. Suspendisse venenatis eget" +
-        "odio sit amet convallis. Integer facilisis imperdiet purus, non dapibus metus tincidunt ut. Sed a lobortis" +
-        "sem. Fusce et sem ipsum. Donec in nibh at mi convallis luctus a et ex. Donec aliquet accumsan nulla." +
-        "Vivamus eget odio eu nulla efficitur pretium sit amet vitae lectus. Ut dapibus lectus libero," +
-        "et cursus metus cursus interdum.");
+    const [tempDiary, setTempDiary] = useState("");
+    const [loading, setLoading] = useState(false);
+    // const [tempDiary, setTempDiary] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+    //     "Nunc ac nunc nec ligula commodo consequat quis id augue. Morbi nec sapien lectus." +
+    //     "Vestibulum sollicitudin ultricies molestie. Nunc vitae lectus eget erat consequat euismod." +
+    //     "In sit amet nibh fringilla diam vestibulum imperdiet. Etiam tristique nisl lacinia, tincidunt risus id," +
+    //     "pulvinar purus. Vestibulum feugiat vitae tortor eu vehicula. Proin nec nunc accumsan, pulvinar odio id," +
+    //     "sollicitudin lorem. Aliquam luctus ut est sed ornare. Fusce cursus nulla id sem egestas accumsan." +
+    //     "Nunc et ante accumsan, consequat ex non, semper mi. Vestibulum mattis porta faucibus. Cras finibus" +
+    //     "eros a tellus sodales consectetur. Mauris felis nibh, egestas et lorem in, tincidunt lobortis arcu." +
+    //     "In mauris nibh, imperdiet quis ex ut, molestie auctor sapien. Duis efficitur, nibh nec iaculis egestas," +
+    //     "lorem neque blandit nulla, maximus dignissim justo erat eget elit. Duis ullamcorper faucibus mollis." +
+    //     "Donec auctor quis dolor nec euismod. Morbi rhoncus eleifend lacus, sed semper nulla hendrerit ut." +
+    //     "Suspendisse pharetra faucibus sapien. Curabitur auctor dui sed gravida mollis. Etiam orci sapien," +
+    //     "finibus ac lorem convallis, finibus pharetra est. Nunc quis odio pellentesque, suscipit augue at," +
+    //     "pulvinar libero. Nam porta, orci a auctor egestas, nulla enim varius quam, eget ultrices est leo a dui." +
+    //     "Etiam egestas finibus mattis. Aenean nunc est, fringilla sed risus at, pulvinar lobortis nisl." +
+    //     "Maecenas commodo fringilla placerat. Maecenas quis laoreet eros. Praesent metus tellus, ultrices et dolor" +
+    //     "quis, tristique mattis justo. Maecenas blandit, dolor eget dignissim fermentum, purus risus pulvinar nisl," +
+    //     "et dignissim ligula lacus vel neque. Ut interdum purus sed pharetra viverra. Suspendisse venenatis eget" +
+    //     "odio sit amet convallis. Integer facilisis imperdiet purus, non dapibus metus tincidunt ut. Sed a lobortis" +
+    //     "sem. Fusce et sem ipsum. Donec in nibh at mi convallis luctus a et ex. Donec aliquet accumsan nulla." +
+    //     "Vivamus eget odio eu nulla efficitur pretium sit amet vitae lectus. Ut dapibus lectus libero," +
+    //     "et cursus metus cursus interdum.");
+    const [diary, setDiary] = useState("");
+    // const [diary, setDiary] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+    //     "Nunc ac nunc nec ligula commodo consequat quis id augue. Morbi nec sapien lectus." +
+    //     "Vestibulum sollicitudin ultricies molestie. Nunc vitae lectus eget erat consequat euismod." +
+    //     "In sit amet nibh fringilla diam vestibulum imperdiet. Etiam tristique nisl lacinia, tincidunt risus id," +
+    //     "pulvinar purus. Vestibulum feugiat vitae tortor eu vehicula. Proin nec nunc accumsan, pulvinar odio id," +
+    //     "sollicitudin lorem. Aliquam luctus ut est sed ornare. Fusce cursus nulla id sem egestas accumsan." +
+    //     "Nunc et ante accumsan, consequat ex non, semper mi. Vestibulum mattis porta faucibus. Cras finibus" +
+    //     "eros a tellus sodales consectetur. Mauris felis nibh, egestas et lorem in, tincidunt lobortis arcu." +
+    //     "In mauris nibh, imperdiet quis ex ut, molestie auctor sapien. Duis efficitur, nibh nec iaculis egestas," +
+    //     "lorem neque blandit nulla, maximus dignissim justo erat eget elit. Duis ullamcorper faucibus mollis." +
+    //     "Donec auctor quis dolor nec euismod. Morbi rhoncus eleifend lacus, sed semper nulla hendrerit ut." +
+    //     "Suspendisse pharetra faucibus sapien. Curabitur auctor dui sed gravida mollis. Etiam orci sapien," +
+    //     "finibus ac lorem convallis, finibus pharetra est. Nunc quis odio pellentesque, suscipit augue at," +
+    //     "pulvinar libero. Nam porta, orci a auctor egestas, nulla enim varius quam, eget ultrices est leo a dui." +
+    //     "Etiam egestas finibus mattis. Aenean nunc est, fringilla sed risus at, pulvinar lobortis nisl." +
+    //     "Maecenas commodo fringilla placerat. Maecenas quis laoreet eros. Praesent metus tellus, ultrices et dolor" +
+    //     "quis, tristique mattis justo. Maecenas blandit, dolor eget dignissim fermentum, purus risus pulvinar nisl," +
+    //     "et dignissim ligula lacus vel neque. Ut interdum purus sed pharetra viverra. Suspendisse venenatis eget" +
+    //     "odio sit amet convallis. Integer facilisis imperdiet purus, non dapibus metus tincidunt ut. Sed a lobortis" +
+    //     "sem. Fusce et sem ipsum. Donec in nibh at mi convallis luctus a et ex. Donec aliquet accumsan nulla." +
+    //     "Vivamus eget odio eu nulla efficitur pretium sit amet vitae lectus. Ut dapibus lectus libero," +
+    //     "et cursus metus cursus interdum.");
     //diaryState : 0 -> before writing, 1 -> modifying, 2 -> modifiable
     const [diaryState, setDiaryState] = useState(0);
     const inputTag = useRef();
     const modifiedDiary = useRef();
 
     const BACKGROUND_IMAGE_COL_NUM = 6;
+
+    useEffect(() => {
+        if(loading) {
+            document.body.style = 'overflow: hidden';
+        }else {
+            document.body.style = 'overflow: unset';
+        }
+    }, [loading])
 
     const backgroundHandler = (e) => {
         setActiveBackId(e.target.id);
@@ -140,35 +154,43 @@ function WritingDiary() {
     const writeDiary = async (a) => {
         let date = new Date().toLocaleDateString();
         let keywordString = "";
-        for(let i = 0; i < selectedKey.length; i++) {
-            if(i == 0) {
+
+        for (let i = 0; i < selectedKey.length; i++) {
+            if (i == 0) {
                 keywordString += selectedKey[i];
             }
             else {
                 keywordString += ',' + selectedKey[i];
             }
-            
+
         }
         try {
-            // const req = await API.post("/gpt/diary/dutch", {
-            const req = await API.post("/dutch", {
+            // await API.post("/dutch", {
+            await API.post("/gpt/diary/dutch", {
                 'userName': 'Lee Jungbeen',
                 'userInput': keywordString,
                 'todayDate': date
+            }).then(res => {
+                setLoading(false);
+                console.log(res);
+                setDiary(res.data.message.content);
+                setTempDiary(res.data.message.content);
+                setDiaryState(2);
             });
+
         } catch (error) {
             console.error("There was an error in Post!", error);
         }
 
-        try {
-            //error: gpt get method 없음
-            const res = await API.get('/gpt');
-            console.log(res.data);
-            setDiary(res.data.message.content);
-            setTempDiary(res.data.message.content);
-        } catch (error) {
-            console.error("There was an error in Get!", error);
-        }
+        // try {
+        //     //error: gpt get method 없음
+        //     const res = await API.get('/gpt');
+        //     console.log(res.data);
+        //     setDiary(res.data.message.content);
+        //     setTempDiary(res.data.message.content);
+        // } catch (error) {
+        //     console.error("There was an error in Get!", error);
+        // }
     }
 
     const sendDiary = async () => {
@@ -227,8 +249,9 @@ function WritingDiary() {
                         <div className='button_case'>
                             <span className="button_outer" onClick={() => {
                                 if (selectedKey.length > 0) {
+                                    setLoading(true);
                                     writeDiary(selectedKey);
-                                    setDiaryState(2);
+                                    // setDiaryState(2);
                                 }
                             }}>
                                 <span className="button_inner"></span>
@@ -288,6 +311,14 @@ function WritingDiary() {
                         </div>
                     </div>
                 }
+                {loading &&
+                    <div id="modal-wrap">
+                        <Spinner animation="border" role="status" id = 'spinner'>
+                            <span className="visually-hidden">Loading...</span>
+                        </Spinner>
+                    </div>
+                }
+
                 <div>
 
                 </div>

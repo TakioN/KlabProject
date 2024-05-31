@@ -1,27 +1,22 @@
 {
   "files": {
-    "main.css": "/KlabProject/static/css/main.b7ff8a34.css",
-    "main.js": "/KlabProject/static/js/main.489f40fe.js",
+    "main.css": "/KlabProject/static/css/main.d25d2ff8.css",
+    "main.js": "/KlabProject/static/js/main.863623cf.js",
     "static/js/453.2ef5181b.chunk.js": "/KlabProject/static/js/453.2ef5181b.chunk.js",
     "static/media/diary4.png": "/KlabProject/static/media/diary4.afcff3a951e43de58936.png",
-    "static/media/back2.png": "/KlabProject/static/media/back2.ac9cc5ee21042ab4c632.png",
     "static/media/diary.png": "/KlabProject/static/media/diary.0ab9fca3c8c80858704e.png",
-    "static/media/back4.png": "/KlabProject/static/media/back4.e6e4c3ae738acbc9e302.png",
-    "static/media/back5.png": "/KlabProject/static/media/back5.d62d964a157a5c11bbc4.png",
     "static/media/diary3.png": "/KlabProject/static/media/diary3.6b73038da56b40166665.png",
     "static/media/diary2.png": "/KlabProject/static/media/diary2.47d914e654ce3d3cbbef.png",
     "static/media/back3.png": "/KlabProject/static/media/back3.2349c068f5c60cc0bc98.png",
-    "static/media/back6.png": "/KlabProject/static/media/back6.9a587f1afb51bddc36d7.png",
     "static/media/VeganStylePersonalUse.ttf": "/KlabProject/static/media/VeganStylePersonalUse.0aec18fe70f7524809cf.ttf",
     "static/media/PoetsenOne-Regular.ttf": "/KlabProject/static/media/PoetsenOne-Regular.22ae511e03fc2ed8d264.ttf",
-    "static/media/back1.png": "/KlabProject/static/media/back1.26b48cfbd4a4f05c2c1d.png",
     "index.html": "/KlabProject/index.html",
-    "main.b7ff8a34.css.map": "/KlabProject/static/css/main.b7ff8a34.css.map",
-    "main.489f40fe.js.map": "/KlabProject/static/js/main.489f40fe.js.map",
+    "main.d25d2ff8.css.map": "/KlabProject/static/css/main.d25d2ff8.css.map",
+    "main.863623cf.js.map": "/KlabProject/static/js/main.863623cf.js.map",
     "453.2ef5181b.chunk.js.map": "/KlabProject/static/js/453.2ef5181b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7ff8a34.css",
-    "static/js/main.489f40fe.js"
+    "static/css/main.d25d2ff8.css",
+    "static/js/main.863623cf.js"
   ]
 }

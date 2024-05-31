@@ -183,6 +183,11 @@ p {
   height: 891px;
   padding: 25px;
 }
+#spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
 
 /* component references */
 .button_case{
