@@ -20,13 +20,14 @@ function Search() {
             <SidePanel />
             <div className='mainscreen' style={{ marginRight: '200px' }}>
                 <div>
-                    <InputGroup className="mb-3">
+                    <InputGroup className="mb-3" style={{flexWrap: 'nowrap'}}>
                         <Form.Control
                             placeholder="Search User"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
+                            style={{width: '80%'}}
                         />
-                        <Button variant="outline-secondary" id="button-addon2">
+                        <Button variant="outline-secondary" id="button-addon2" style={{width: '20%'}}>
                             Search
                         </Button>
                     </InputGroup>

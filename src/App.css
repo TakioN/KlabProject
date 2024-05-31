@@ -87,6 +87,7 @@ p {
 .mainscreen {
   padding-left:400px;
   padding-top: 35px;
+  padding-bottom: 100px;
 }
 .form-control {
   border: #0093ED 2px solid;
@@ -177,14 +178,19 @@ p {
   flex-wrap: wrap;
   gap: 10px;
 }
+#modifiable {
+  width: 630px;
+  height: 891px;
+  padding: 25px;
+}
 
 /* component references */
-#button_case{
+.button_case{
   position: relative;
   height: 200px;
   margin-top: 100px;
 }
-#button_outer
+.button_outer
 {
     position: absolute;
     top: 50%;
@@ -204,10 +210,10 @@ p {
     cursor: pointer;
 }
 
-#button_outer:before,
-#button_outer:after,
-#button_inner:before,
-#button_inner:after
+.button_outer:before,
+.button_outer:after,
+.button_inner:before,
+.button_inner:after
 {
     content: '';
     position: absolute;
@@ -218,31 +224,31 @@ p {
     mix-blend-mode: hue;
 }
 
-#button_outer:before
+.button_outer:before
 {
     top: -2px;
     left: -2px
 }
-#button_outer:after
+.button_outer:after
 {
     top: -2px;
     right: -2px;
 }
-#button_inner:before
+.button_inner:before
 {
     bottom: -2px;
     left: -2px
 }
-#button_inner:after
+.button_inner:after
 {
     bottom: -2px;
     right: -2px
 }
 
-#button_outer:hover:before,
-#button_outer:hover:after,
-#button_outer:hover #button_inner:before,
-#button_outer:hover #button_inner:after
+.button_outer:hover:before,
+.button_outer:hover:after,
+.button_outer:hover .button_inner:before,
+.button_outer:hover .button_inner:after
 {
     width: calc( 180px/2 );
     height: calc( 50px/2 )

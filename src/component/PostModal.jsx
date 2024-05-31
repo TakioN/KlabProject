@@ -50,13 +50,14 @@ function PostModal(props) {
                         </div>
 
                         <div id='comment_text' style={{marginBottom: 0}}>
-                            <InputGroup className="mb-3" id="comment_input">
+                            <InputGroup className="mb-3" id="comment_input" style={{flexWrap: 'nowrap'}}>
                                 <Form.Control
                                     placeholder="Comment Someting"
                                     aria-label="Recipient's username"
                                     aria-describedby="basic-addon2"
+                                    style={{width: '75%'}}
                                 />
-                                <Button variant="outline-secondary" id="button-addon2">
+                                <Button variant="outline-secondary" id="button-addon2" style={{width: '25%'}}>
                                     Comment
                                 </Button>
                             </InputGroup>
