@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/KlabProject/static/css/main.d25d2ff8.css",
-    "main.js": "/KlabProject/static/js/main.863623cf.js",
+    "main.css": "/KlabProject/static/css/main.7d822e7e.css",
+    "main.js": "/KlabProject/static/js/main.5aa3130f.js",
     "static/js/453.2ef5181b.chunk.js": "/KlabProject/static/js/453.2ef5181b.chunk.js",
     "static/media/diary4.png": "/KlabProject/static/media/diary4.afcff3a951e43de58936.png",
     "static/media/diary.png": "/KlabProject/static/media/diary.0ab9fca3c8c80858704e.png",
@@ -11,12 +11,12 @@
     "static/media/VeganStylePersonalUse.ttf": "/KlabProject/static/media/VeganStylePersonalUse.0aec18fe70f7524809cf.ttf",
     "static/media/PoetsenOne-Regular.ttf": "/KlabProject/static/media/PoetsenOne-Regular.22ae511e03fc2ed8d264.ttf",
     "index.html": "/KlabProject/index.html",
-    "main.d25d2ff8.css.map": "/KlabProject/static/css/main.d25d2ff8.css.map",
-    "main.863623cf.js.map": "/KlabProject/static/js/main.863623cf.js.map",
+    "main.7d822e7e.css.map": "/KlabProject/static/css/main.7d822e7e.css.map",
+    "main.5aa3130f.js.map": "/KlabProject/static/js/main.5aa3130f.js.map",
     "453.2ef5181b.chunk.js.map": "/KlabProject/static/js/453.2ef5181b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d25d2ff8.css",
-    "static/js/main.863623cf.js"
+    "static/css/main.7d822e7e.css",
+    "static/js/main.5aa3130f.js"
   ]
 }
