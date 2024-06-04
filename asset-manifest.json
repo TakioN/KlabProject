@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kingklab.kro.kr/static/css/main.2377c1e4.css",
-    "main.js": "/kingklab.kro.kr/static/js/main.97382c37.js",
+    "main.js": "/kingklab.kro.kr/static/js/main.6224951f.js",
     "static/js/453.2ef5181b.chunk.js": "/kingklab.kro.kr/static/js/453.2ef5181b.chunk.js",
     "static/media/diary4.png": "/kingklab.kro.kr/static/media/diary4.afcff3a951e43de58936.png",
     "static/media/diary.png": "/kingklab.kro.kr/static/media/diary.0ab9fca3c8c80858704e.png",
@@ -12,11 +12,11 @@
     "static/media/PoetsenOne-Regular.ttf": "/kingklab.kro.kr/static/media/PoetsenOne-Regular.22ae511e03fc2ed8d264.ttf",
     "index.html": "/kingklab.kro.kr/index.html",
     "main.2377c1e4.css.map": "/kingklab.kro.kr/static/css/main.2377c1e4.css.map",
-    "main.97382c37.js.map": "/kingklab.kro.kr/static/js/main.97382c37.js.map",
+    "main.6224951f.js.map": "/kingklab.kro.kr/static/js/main.6224951f.js.map",
     "453.2ef5181b.chunk.js.map": "/kingklab.kro.kr/static/js/453.2ef5181b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2377c1e4.css",
-    "static/js/main.97382c37.js"
+    "static/js/main.6224951f.js"
   ]
 }
