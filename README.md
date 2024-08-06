@@ -1,70 +1,19 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Memory Capsule
+학교 프로젝트 과목에서 네덜란드의 Fontys ACE 대학의 학생들과 협업하여 **<<Metaverse를 이용하여 젊은 층(Youngster)의 이용자들에게 Good Life를 일깨워주기>>** 라는 주제로 프로그램을 구현하였다.
+## 📗프로젝트 설명
+우리 팀은 메타버스 중 Life Logging을 이용하여 젊은 세대가 일기를 통해 의미있는 순간을 기록하고 미래에 그 순간을 추억할 수 있도록 만드는 것을 목표로 하였다.
+## 💣프로젝트 개발 배경
+현대의 젊은 세대는 시간, 귀찮음 등의 이유로 일기를 작성하지 않으므로 일기를 AI가 대신 작성해주는 웹 프로그램을 개발하고자 하였다.
+## ⏰프로젝트 기간
+- 2024.03.15 ~ 2024.06.12
+  1. (3.15 ~ 4.1) 프로젝트 주제 선정
+  2. ( ~ 4.15) 제안서 및 Tech Approach 작성
+  3. ( ~ 5.5) 사용자 대상 설문지 작성 및 디자인 구상
+  4. ( ~ 6.12) 프로젝트 최종 완성
+## 👨‍👦‍👦프로젝트 팀원
+- **허지훈** : 팀장, 일기 작성 프로그램 제작 & 관리
+- **김현만** : 일기 작성 프로그램 제작 & 관리
+- **허동훈** : 벡엔드 개발
+- **김현민** : 프론트엔드 개발
+- **이정빈** : 프론트엔드 개발
+- **Emma** : 시장 조사 및 타겟 유저 관련 조
