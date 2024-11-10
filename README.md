@@ -17,3 +17,8 @@
 - **김현민** : 프론트엔드 개발
 - **이정빈** : 프론트엔드 개발
 - **Emma** : 시장 조사 및 타겟 유저 관련 조사
+## 서비스 화면
+<img src="https://github.com/user-attachments/assets/aaa69a56-a474-49cf-9c3b-70e78cb62327" width="49%" />
+<img src="https://github.com/user-attachments/assets/0b31d560-c08c-405b-9dc7-571214e25d57" width="49%" />
+<img src="https://github.com/user-attachments/assets/7a4c3065-cc69-473d-8966-324a34b88ea8" width="49%" />
+<img src="https://github.com/user-attachments/assets/3388a097-0d91-4ef4-bd6e-5353da5792b1" width="49%" />
